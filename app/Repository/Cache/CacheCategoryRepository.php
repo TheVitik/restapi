@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\Cache;
 
+use App\Contracts\CategoryRepository;
 use App\Models\Category;
 
-class CategoryRepository
+use function cache;
+
+class CacheCategoryRepository implements CategoryRepository
 {
     /**
      * Create a new user

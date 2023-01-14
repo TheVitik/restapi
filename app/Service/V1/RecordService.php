@@ -2,11 +2,9 @@
 
 namespace App\Service\V1;
 
-use App\Models\Category;
+use App\Contracts\RecordRepository;
 use App\Models\Record;
-use App\Models\User;
-use App\Repository\CategoryRepository;
-use App\Repository\RecordRepository;
+use App\Repository\Cache\CacheRecordRepository;
 use Illuminate\Http\Request;
 
 class RecordService

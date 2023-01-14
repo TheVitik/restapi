@@ -2,9 +2,9 @@
 
 namespace App\Service\V1;
 
+use App\Contracts\CategoryRepository;
 use App\Models\Category;
-use App\Models\User;
-use App\Repository\CategoryRepository;
+use App\Repository\Cache\CacheCategoryRepository;
 use Illuminate\Http\Request;
 
 class CategoryService

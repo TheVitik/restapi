@@ -1,10 +1,13 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\Cache;
 
+use App\Contracts\UserRepository;
 use App\Models\User;
 
-class UserRepository
+use function cache;
+
+class CacheUserRepository implements UserRepository
 {
     /**
      * Create a new user

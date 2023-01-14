@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\Cache;
 
-use App\Models\Category;
+use App\Contracts\RecordRepository;
 use App\Models\Record;
 
-class RecordRepository
+use function cache;
+use function now;
+
+class CacheRecordRepository implements RecordRepository
 {
     /**
      * Create a new user

@@ -2,8 +2,8 @@
 
 namespace App\Service\V1;
 
+use App\Contracts\UserRepository;
 use App\Models\User;
-use App\Repository\UserRepository;
 use Illuminate\Http\Request;
 
 class UserService
