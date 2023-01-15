@@ -2,16 +2,15 @@
 
 namespace App\Service\V1;
 
-use App\Contracts\RecordRepository;
-use App\Models\Record;
+use App\Models\V1\Record;
 use App\Repository\Cache\CacheRecordRepository;
 use Illuminate\Http\Request;
 
 class RecordService
 {
-    private RecordRepository $repository;
+    private CacheRecordRepository $repository;
 
-    function __construct(RecordRepository $repository)
+    function __construct(CacheRecordRepository $repository)
     {
         $this->repository = $repository;
     }
