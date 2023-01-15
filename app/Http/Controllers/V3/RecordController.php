@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\V2;
+namespace App\Http\Controllers\V3;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\V2\CreateRecordRequest;
-use App\Http\Requests\V2\GetRecordsRequest;
-use App\Http\Resources\RecordResource;
-use App\Service\V2\RecordService;
+use App\Http\Requests\V3\CreateRecordRequest;
+use App\Http\Requests\V3\GetRecordsRequest;
+use App\Http\Resources\V3\RecordResource;
+use App\Service\V3\RecordService;
 use Illuminate\Http\JsonResponse;
 
 use function response;
@@ -36,7 +36,7 @@ class RecordController extends Controller
             ], 500);
         } catch (\Throwable $e) {
             return response()->json([
-                'message' => 'Unable to create a record',
+                'message' => $e->getMessage(),
             ], 500);
         }
 
