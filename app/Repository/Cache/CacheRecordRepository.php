@@ -2,18 +2,22 @@
 
 namespace App\Repository\Cache;
 
-use App\Contracts\RecordRepository;
-use App\Models\Record;
+use App\Models\V1\Record;
+
+use Psr\Container\ContainerExceptionInterface;
+
+use Psr\Container\NotFoundExceptionInterface;
 
 use function cache;
 use function now;
 
-class CacheRecordRepository implements RecordRepository
+class CacheRecordRepository
 {
     /**
-     * Create a new user
+     * Create a new record
      *
-     * @param Record $record
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
     public function create(Record $record): Record
     {
@@ -29,6 +33,12 @@ class CacheRecordRepository implements RecordRepository
         return $record;
     }
 
+    /**
+     * Get all records by user id
+     *
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
+     */
     public function allByUser(int $userId): array
     {
         $result = [];
@@ -46,6 +56,12 @@ class CacheRecordRepository implements RecordRepository
         return $result;
     }
 
+    /**
+     * Get all records by user id and category id
+     *
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
+     */
     public function allByUserAndCategory(int $userId, int $categoryId): array
     {
         $result = [];

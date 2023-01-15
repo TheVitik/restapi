@@ -2,17 +2,17 @@
 
 namespace App\Repository\Cache;
 
-use App\Contracts\CategoryRepository;
-use App\Models\Category;
+use App\Models\V1\Category;
+
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 use function cache;
 
-class CacheCategoryRepository implements CategoryRepository
+class CacheCategoryRepository
 {
     /**
-     * Create a new user
-     *
-     * @param Category $category
+     * Create a new category
      */
     public function create(Category $category): Category
     {
@@ -27,7 +27,11 @@ class CacheCategoryRepository implements CategoryRepository
         return $category;
     }
 
-    public function all()
+    /**
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
+     */
+    public function all(): array
     {
         return cache()->get('categories');
     }

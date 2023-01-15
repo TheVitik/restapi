@@ -2,17 +2,20 @@
 
 namespace App\Repository\Cache;
 
-use App\Contracts\UserRepository;
-use App\Models\User;
+use App\Models\V1\User;
+
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 use function cache;
 
-class CacheUserRepository implements UserRepository
+class CacheUserRepository
 {
     /**
      * Create a new user
      *
-     * @param User $user
+     * @throws ContainerExceptionInterface
+     * @throws NotFoundExceptionInterface
      */
     public function create(User $user): User
     {
