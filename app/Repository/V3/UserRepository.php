@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Repository\Database;
+namespace App\Repository\V3;
 
-use App\Models\V2\User;
+use App\Models\V3\User;
 
 use Throwable;
 
-class DatabaseUserRepository
+class UserRepository
 {
     /**
      * Create a new user
@@ -28,5 +28,15 @@ class DatabaseUserRepository
     public function findById(int $id): User
     {
         return User::findOrFail($id);
+    }
+
+    /**
+     * Find user by name
+     *
+     * @throws Throwable
+     */
+    public function findByName(string $name): User
+    {
+        return User::where('name', $name)->firstOrFail();
     }
 }

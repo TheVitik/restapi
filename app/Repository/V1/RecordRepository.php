@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository\Cache;
+namespace App\Repository\V1;
 
 use App\Models\V1\Record;
 
@@ -11,7 +11,7 @@ use Psr\Container\NotFoundExceptionInterface;
 use function cache;
 use function now;
 
-class CacheRecordRepository
+class RecordRepository
 {
     /**
      * Create a new record

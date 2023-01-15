@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Repository\Database;
+namespace App\Repository\V2;
 
 use App\Models\V2\Record;
 use Illuminate\Database\Eloquent\Collection;
 
-class DatabaseRecordRepository
+class RecordRepository
 {
     /**
      * Create a new record

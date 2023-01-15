@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository\Cache;
+namespace App\Repository\V1;
 
 use App\Models\V1\Category;
 
@@ -9,7 +9,7 @@ use Psr\Container\NotFoundExceptionInterface;
 
 use function cache;
 
-class CacheCategoryRepository
+class CategoryRepository
 {
     /**
      * Create a new category

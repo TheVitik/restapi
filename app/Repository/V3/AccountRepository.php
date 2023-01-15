@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Repository\Database;
+namespace App\Repository\V3;
 
 use App\Models\V2\Account;
 
 use Illuminate\Database\Eloquent\Collection;
 use Throwable;
 
-class DatabaseAccountRepository
+class AccountRepository
 {
     /**
      * Create a new account

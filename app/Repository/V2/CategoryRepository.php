@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Repository\Database;
+namespace App\Repository\V2;
 
 use App\Models\V2\Category;
 use Illuminate\Database\Eloquent\Collection;
 use Throwable;
 
-class DatabaseCategoryRepository
+class CategoryRepository
 {
     /**
      * Create a new category
