@@ -3,14 +3,14 @@
 namespace App\Service\V1;
 
 use App\Models\V1\Category;
-use App\Repository\Cache\CacheCategoryRepository;
+use App\Repository\V1\CategoryRepository;
 use Illuminate\Http\Request;
 
 class CategoryService
 {
-    private CacheCategoryRepository $repository;
+    private CategoryRepository $repository;
 
-    function __construct(CacheCategoryRepository $repository)
+    function __construct(CategoryRepository $repository)
     {
         $this->repository = $repository;
     }

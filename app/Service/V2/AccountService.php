@@ -3,15 +3,15 @@
 namespace App\Service\V2;
 
 use App\Models\V2\Account;
-use App\Repository\Database\DatabaseAccountRepository;
+use App\Repository\V2\AccountRepository;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 
 class AccountService
 {
-    private DatabaseAccountRepository $repository;
+    private AccountRepository $repository;
 
-    function __construct(DatabaseAccountRepository $repository)
+    function __construct(AccountRepository $repository)
     {
         $this->repository = $repository;
     }

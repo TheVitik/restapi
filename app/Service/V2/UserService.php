@@ -4,17 +4,17 @@ namespace App\Service\V2;
 
 use App\Models\V2\User;
 use App\Models\V2\Account;
-use App\Repository\Database\DatabaseAccountRepository;
-use App\Repository\Database\DatabaseUserRepository;
+use App\Repository\V2\AccountRepository;
+use App\Repository\V2\UserRepository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class UserService
 {
-    private DatabaseUserRepository $repository;
-    private DatabaseAccountRepository $accountRepository;
+    private UserRepository $repository;
+    private AccountRepository $accountRepository;
 
-    function __construct(DatabaseUserRepository $repository, DatabaseAccountRepository $accountRepository)
+    function __construct(UserRepository $repository, AccountRepository $accountRepository)
     {
         $this->repository = $repository;
         $this->accountRepository = $accountRepository;

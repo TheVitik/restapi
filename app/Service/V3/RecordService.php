@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service\V2;
+namespace App\Service\V3;
 
 use App\Models\V2\Record;
 use App\Repository\V2\AccountRepository;
@@ -23,19 +23,19 @@ class RecordService
 
     public function getRecords(Request $request): Collection
     {
-        $userId = $request->get('user_id');
         if ($request->has('category_id')) {
-            return $this->repository->allByUserAndCategory($userId, $request->get('category_id'));
+            return $this->repository->allByUserAndCategory(auth()->id(), $request->get('category_id'));
         }
 
-        return $this->repository->allByUser($userId);
+        return $this->repository->allByUser(auth()->id());
     }
 
     public function createRecord(Request $request): Record
     {
         $record = new Record($request->all());
+        $record->user_id = auth()->id();
 
-        $account = $this->accountRepository->findByUser($request->get('user_id'));
+        $account = $this->accountRepository->findByUser(auth()->id());
         if ((int)$request->get('sum') > $account->balance) {
             throw new InvalidArgumentException('You have no enough money to make a record');
         }

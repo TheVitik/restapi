@@ -3,14 +3,14 @@
 namespace App\Service\V1;
 
 use App\Models\V1\User;
-use App\Repository\Cache\CacheUserRepository;
+use App\Repository\V1\UserRepository;
 use Illuminate\Http\Request;
 
 class UserService
 {
-    private CacheUserRepository $repository;
+    private UserRepository $repository;
 
-    function __construct(CacheUserRepository $repository)
+    function __construct(UserRepository $repository)
     {
         $this->repository = $repository;
     }
